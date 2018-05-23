@@ -20,8 +20,7 @@ const Card = (props) => (
         <div className={props.icon}/>
             <div className="card__descriptionText">
                 {props.description}
-                <br/>
-                {props.hint && <p>{props.hint}</p>}
+                {props.hint && <br/>}{props.hint}
             </div>
         </div>
 
@@ -40,7 +39,7 @@ const App = () => (
     <CardGroup>
         <Card description="Trial" icon="icon fa fa-thumbs-o-up card__descriptionIcon" price="Free!" />
         <Card description="Basic Tier" icon="con fa fa-trophy card__descriptionIcon" price="$10.00" hint="(most popular)" />
-        <Card description="Advanced Tier" icon="icon fa fa-bolt card__descriptionIcon" price="$6,000" hint ="(only for enterprise-level professionals)"/>
+        <Card description="Advanced Tier" icon="icon fa fa-bolt card__descriptionIcon" price="$6,000" hint="(only for enterprise-level professionals)"/>
     </CardGroup>
 );
 
