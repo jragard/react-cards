@@ -12,50 +12,36 @@ import React from 'react';
  * The above would render a card group with a single child in it.
  *
  */
+
+const Card = (props) => (
+  
+<div className="card cardGroup__card">
+    <div className="card__description cardGroup__cardDescription">
+        <div className={props.icon}/>
+            <div className="card__descriptionText">
+                {props.description}
+                <br/>
+                {props.hint && <p>{props.hint}</p>}
+            </div>
+        </div>
+
+    <div className="card__price">{props.price}</div>
+
+</div>
+);
+
 const CardGroup = (props) => (
     <div className="cardGroup">
         {props.children}
     </div>
 );
 
-const Card = (props) => (
-    <div>TODO: Implement Card Component</div>
-);
-
 const App = () => (
-    <div className="cardGroup">
-        <div className="card cardGroup__card">
-            <div className="card__description cardGroup__cardDescription">
-                <div className="icon fa fa-thumbs-o-up card__descriptionIcon" />
-                <div className="card__descriptionText">
-                    Trial
-                </div>
-            </div>
-            <div className="card__price">Free!</div>
-        </div>
-        <div className="card cardGroup__card">
-            <div className="card__description cardGroup__cardDescription">
-                <div className="icon fa fa-trophy card__descriptionIcon" />
-                <div className="card__descriptionText">
-                    Basic tier
-                    <br/>
-                    (most popular)
-                </div>
-            </div>
-            <div className="card__price">$10.00</div>
-        </div>
-        <div className="card cardGroup__card">
-            <div className="card__description cardGroup__cardDescription">
-                <div className="icon fa fa-bolt card__descriptionIcon" />
-                <div className="card__descriptionText">
-                    Advanced tier
-                    <br/>
-                    (only for enterprise-level professionals)
-                </div>
-            </div>
-            <div className="card__price">$6,000.00</div>
-        </div>
-    </div>
+    <CardGroup>
+        <Card description="Trial" icon="icon fa fa-thumbs-o-up card__descriptionIcon" price="Free!" />
+        <Card description="Basic Tier" icon="con fa fa-trophy card__descriptionIcon" price="$10.00" hint="(most popular)" />
+        <Card description="Advanced Tier" icon="icon fa fa-bolt card__descriptionIcon" price="$6,000" hint ="(only for enterprise-level professionals)"/>
+    </CardGroup>
 );
 
 export default App;
